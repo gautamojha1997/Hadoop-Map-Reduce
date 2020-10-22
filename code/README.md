@@ -16,7 +16,7 @@
 
 ```sbt clean compile assembly```
 
-* I have used HDP Sandbox on VMWare so I have used WinScp to transfer files  from my Windows to the HDP Sandbox. Thus we copy the jar and dblp.xml input from local machine to HDP sandbox.
+* I have used HDP Sandbox on VMWare thus I am using WinScp to transfer my files  from Windows to the HDP Sandbox. Thus we copy the jar and dblp.xml input from local machine to HDP sandbox.
 
 * Now we connect to the sandbox as root :
 

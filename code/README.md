@@ -7,30 +7,30 @@
 
 ## Steps to Set-up Environment and run the jobs.
 
-1. Cloning the Project -
+* Cloning the Project -
  
 ```git clone https://ojhagautam97@bitbucket.org/cs441-fall2020/gautamkumar_ojha_hw2.git```
 
 
-2. Navigate to cd gautamkumar_ojha_hw2\code and clean, compile the code and build the jar which will be generated at gautamkumar_ojha_hw2\code\target\scala-2.13\code-assembly-0.1.jar:
+* Navigate to cd gautamkumar_ojha_hw2\code and clean, compile the code and build the jar which will be generated at gautamkumar_ojha_hw2\code\target\scala-2.13\code-assembly-0.1.jar:
 
 ```sbt clean compile assembly```
 
-3. I have used HDP Sandbox on VMWare so to transfer files I use WinScp from my Windows to the HDP Sandbox. Thus we copy the jar and dblp.xml input from local machine to HDP sandbox.
+* I have used HDP Sandbox on VMWare so to transfer files I use WinScp from my Windows to the HDP Sandbox. Thus we copy the jar and dblp.xml input from local machine to HDP sandbox.
 
-4. Now we connect to the sandbox as root :
+* Now we connect to the sandbox as root :
 
 ```ssh root@sandbox-hdp.hortonworks.com -p 2222```
 
-5. Making Input directory as tmp to store dblp.xml as:
+* Making Input directory as tmp to store dblp.xml as:
 
 ```hdfs dfs -mkdir /tmp```
 
-6. Putting dblp.xml in dir tmp as:
+* Putting dblp.xml in dir tmp as:
 
 ```hdfs dfs -put dblp.xml /tmp/```
 
-7. Now the final step is just ls -lrt to check whether dblp dataset has been transferred properly and have root access, then finally execute the jar as:
+* Now the final step is just ls -lrt to check whether dblp dataset has been transferred properly and have root access, then finally execute the jar as:
 
 ```hadoop jar code-assembly-0.1.jar code /tmp/dblp.xml /tmp/op```
 
@@ -165,12 +165,12 @@ louis kruh,194
 ```
 
 
-###Output Files
+### Output Files
 
 I have the Output files under the output folder in code folder. I would say you should preferably open the non csv file in any
 text editor(I read in VS code) because it's easy interpretable and understandable.
 
-###Testing 
+### Testing 
 
 I have done local testing in terminal using command:
 

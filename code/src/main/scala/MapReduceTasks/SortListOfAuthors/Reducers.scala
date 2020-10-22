@@ -11,8 +11,12 @@ import scala.jdk.CollectionConverters._
 
 //import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
+/*
+This Scala file has two reducer classes to produce top 100 authors as per specified task
 
+*/
 
+//This class emits Author with it's total co-author count
 class Reducers extends Reducer[Text, Text, Text, IntWritable]{
 
   val logger: Logger = LoggerFactory.getLogger(this.getClass)
@@ -27,6 +31,7 @@ class Reducers extends Reducer[Text, Text, Text, IntWritable]{
   }
 }
 
+//This class returns the total author count
 class PublicationCountReducer extends Reducer[Text, IntWritable, Text, IntWritable]{
   val logger: Logger = LoggerFactory.getLogger(this.getClass)
   logger.info("Executing reducer to display total count of input from mapper completed")

@@ -7,7 +7,8 @@ import org.slf4j.{Logger, LoggerFactory}
 
 
 import scala.xml.XML
-
+/*
+Mappers consists of two mapper class for producing Top 100 Authors as per specified*/
 class Mappers {
 
   val logger: Logger = LoggerFactory.getLogger(this.getClass)
@@ -21,6 +22,7 @@ class Mappers {
   }
 }
 
+//This class emits Author with it's co-author count to the reducer.
 class CoAuthorCountMapper extends Mapper[LongWritable, Text, Text, Text] {
 
     val logger: Logger = LoggerFactory.getLogger(this.getClass)
@@ -43,6 +45,7 @@ class CoAuthorCountMapper extends Mapper[LongWritable, Text, Text, Text] {
     }
   }
 
+//This class emits Author with count one to the reducer.
 class PublicationCountMapper extends Mapper[LongWritable, Text, Text, IntWritable]{
 
   val logger: Logger = LoggerFactory.getLogger(this.getClass)

@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Mapper
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.xml.XML
-
+/*This class emits Venue and author for that venue to the mapper*/
 class TopTenAuthorsMapper extends Mapper[LongWritable, Text, Text, Text]{
 
   val logger: Logger = LoggerFactory.getLogger(this.getClass)

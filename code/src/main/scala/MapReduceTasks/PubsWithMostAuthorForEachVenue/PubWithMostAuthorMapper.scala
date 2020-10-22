@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Mapper
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.xml.XML
-
+/*This class emits venue as key and publication + author count as composite key*/
 class PubWithMostAuthorMapper extends Mapper[LongWritable, Text, Text, Text]{
   val logger: Logger = LoggerFactory.getLogger(this.getClass)
 
@@ -38,7 +38,7 @@ class PubWithMostAuthorMapper extends Mapper[LongWritable, Text, Text, Text]{
 
       val journal = retrieveElementFromXml(StringXml,"journal")
       if(journal.nonEmpty){
-        context.write(new Text(journal.head), new Text("thead:" + title.head + ":>" +"CntAuth:"+ size))
+        context.write(new Text(journal.head), new Text("thead:" + title.head + ":>" +"CntAuth:"+ size)) //using thead and CntAuth to handle bad input error
       }
       val booktitle = retrieveElementFromXml(StringXml,"booktitle")
       if(booktitle.nonEmpty){

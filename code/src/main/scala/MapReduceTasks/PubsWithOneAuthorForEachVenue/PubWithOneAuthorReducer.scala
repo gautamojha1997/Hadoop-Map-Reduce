@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Reducer
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.jdk.CollectionConverters.IterableHasAsScala
-
+/*This class emits publications with one author for each venues*/
 class PubWithOneAuthorReducer extends Reducer[Text, Text, Text, Text]{
   val logger: Logger = LoggerFactory.getLogger(this.getClass)
   logger.info("Reducer combines and reduces the venue and publication title")

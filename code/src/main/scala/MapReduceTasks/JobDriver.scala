@@ -31,7 +31,7 @@ object JobDriver {
     configuration.set("io.serializations", "org.apache.hadoop.io.serializer.JavaSerialization,org.apache.hadoop.io.serializer.WritableSerialization")
 
     //Sort list of Authors with most numbers of Co-Authors
-    /*logger.info("Starting first job to calculate count of co-authors");{
+    logger.info("Starting first job to calculate count of co-authors");{
     val job1 = Job.getInstance(configuration, "Calculates number of co-authors")
     job1.setJarByClass(this.getClass)
     val ip1 = new Path(args(1))
@@ -67,11 +67,11 @@ object JobDriver {
     FileInputFormat.addInputPath(job2, op1)
     FileOutputFormat.setOutputPath(job2, op2)
     job2.waitForCompletion(true)
-    }*/
+    }
 
 
     //Sort list of Authors with no co-authors
-    /* logger.info("Starting job that sorts the authors with no co-author");{
+    logger.info("Starting job that sorts the authors with no co-author");{
       val job3 = Job.getInstance(configuration, "Calculates number of publications for each author")
       job3.setJarByClass(this.getClass)
       val ip3 = new Path(args(1))
@@ -107,10 +107,10 @@ object JobDriver {
       FileInputFormat.addInputPath(job4, op3)
       FileOutputFormat.setOutputPath(job4, op4)
       job4.waitForCompletion(true)
-    }*/
+    }
 
     //Venues with list of publications having only one author
-    /*logger.info("Starting job which produces list of publications that contains only one author");{
+    logger.info("Starting job which produces list of publications that contains only one author");{
       val job5 = Job.getInstance(configuration, "Produces list of publications that contains only one author")
       job5.setJarByClass(this.getClass)
       val ip5 = new Path(args(0))
@@ -127,11 +127,11 @@ object JobDriver {
       FileInputFormat.addInputPath(job5, ip5)
       FileOutputFormat.setOutputPath(job5, op5)
       job5.waitForCompletion(true)
-    }*/
+    }
 
 
     //Venues with list of pubs with most authors
-    /*logger.info("Starting job which produces list of publications that contains only one author");
+    logger.info("Starting job which produces list of publications that contains only one author");
     {
       val job6 = Job.getInstance(configuration, "Produces list of publications that contains most author")
       job6.setJarByClass(this.getClass)
@@ -149,7 +149,7 @@ object JobDriver {
       FileInputFormat.addInputPath(job6, ip6)
       FileOutputFormat.setOutputPath(job6, op6)
       job6.waitForCompletion(true)
-    }*/
+    }
 
     //Job for Top10Authors
     logger.info("Starting job which produces list of Top 10 Authors At each venue");

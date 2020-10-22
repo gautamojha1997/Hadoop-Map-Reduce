@@ -18,7 +18,7 @@ import java.nio.charset.StandardCharsets;
 /**
  External library to manage map reduce input format for xml input type
  Works for multiple input tags
- The input format is based on Apache mahout and Referred to example at https://github.com/Mohammed-siddiq/hadoop-XMLInputFormatWithMultipleTags
+ The input format is based on Apache mahout and Referred to example at https://github.com/ajithnair20/DBLPMapReduce/blob/master/src/main/java/mapreduceinputformat/XmlInputFormatWithMultipleTags.java
  */
 
 public class XMLInputFormat extends TextInputFormat {

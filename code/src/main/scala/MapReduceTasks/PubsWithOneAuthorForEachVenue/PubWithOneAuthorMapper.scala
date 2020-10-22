@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Mapper
 import org.slf4j.{Logger, LoggerFactory}
 
 import scala.xml.XML
-
+/*This Class emits Venue and publication with one author to the mapper*/
 class PubWithOneAuthorMapper extends Mapper[LongWritable, Text, Text, Text]{
 
   val logger: Logger = LoggerFactory.getLogger(this.getClass)
@@ -34,7 +34,7 @@ class PubWithOneAuthorMapper extends Mapper[LongWritable, Text, Text, Text]{
     val author_list = retrieveElementFromXml(StringXml,"author")
     val editor_list = retrieveElementFromXml(StringXml,"editor")
 
-
+    //Emitting only if there is one author
     if (author_list.size==1 || editor_list.size == 1){
       val title = retrieveElementFromXml(StringXml,"title")
       val journal = retrieveElementFromXml(StringXml,"journal")

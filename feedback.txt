@@ -1,0 +1,7 @@
+Hi Gautamkumar,
+
+Your grade for HW2 is 13%.
+
+1. +3% for deploying and executing your jar on an Amazon EMR cluster.
+
+Abhijeet
